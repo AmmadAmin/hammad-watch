@@ -1,0 +1,311 @@
+:root {
+  --bg-color: #0f0f0f;
+  --text-color: #ffffff;
+  --gold: #d4af37;
+  --card-bg: #181818;
+  --navbar-bg: rgba(0,0,0,0.2);
+}
+
+body.light-mode {
+  --bg-color: #f5f5f5;
+  --text-color: #111111;
+  --card-bg: #ffffff;
+  --navbar-bg: rgba(255,255,255,0.9);
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Montserrat', sans-serif;
+  transition: 0.4s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+
+.custom-navbar {
+  background: transparent;
+  padding: 20px 0;
+  transition: 0.4s ease;
+}
+
+.custom-navbar.scrolled {
+  background: #000;
+  padding: 12px 0;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--gold) !important;
+  letter-spacing: 2px;
+}
+
+.nav-link {
+  color: white !important;
+  font-weight: 500;
+  position: relative;
+}
+
+body.light-mode .nav-link {
+  color: #111 !important;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: var(--gold);
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* HERO */
+
+.hero-section {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
+    url('https://images.unsplash.com/photo-1490367532201-b9bc1dc483f6?q=80&w=1800');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+}
+
+.hero-title span {
+  color: var(--gold);
+}
+
+.hero-subtitle {
+  max-width: 700px;
+  margin: 20px auto;
+  font-size: 1.1rem;
+  color: #cfcfcf;
+}
+
+/* BUTTONS */
+
+.luxury-btn {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 14px 36px;
+  border-radius: 50px;
+  transition: 0.4s;
+}
+
+.luxury-btn:hover {
+  background: var(--gold);
+  color: #000;
+}
+
+.luxury-btn-sm {
+  background: var(--gold);
+  border: none;
+  color: #000;
+  padding: 10px 24px;
+  border-radius: 30px;
+}
+
+/* SECTION TITLES */
+
+.section-title h2,
+.specs-content h2,
+.boutique-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+}
+
+.section-title p {
+  color: #aaa;
+}
+
+/* FILTER BUTTONS */
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid #444;
+  color: white;
+  padding: 10px 24px;
+  margin: 5px;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--gold);
+  color: #000;
+  border-color: var(--gold);
+}
+
+/* WATCH CARDS */
+
+.watch-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: 0.4s ease;
+}
+
+.watch-card:hover {
+  transform: translateY(-10px);
+}
+
+.watch-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.watch-image {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.watch-card:hover .watch-image {
+  transform: scale(1.1);
+}
+
+.watch-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.watch-card:hover .watch-overlay {
+  opacity: 1;
+}
+
+.watch-content {
+  padding: 25px;
+}
+
+.watch-content h4 {
+  font-family: 'Playfair Display', serif;
+}
+
+.watch-price {
+  color: var(--gold);
+  font-size: 1.2rem;
+}
+
+.custom-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 5;
+  padding: 10px 15px;
+}
+
+/* TECH SECTION */
+
+.tech-section {
+  padding: 100px 0;
+}
+
+.tech-image {
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.spec-item {
+  margin-bottom: 30px;
+}
+
+.spec-item h5 {
+  color: var(--gold);
+}
+
+/* BOUTIQUE */
+
+.boutique-section {
+  padding: 120px 20px;
+  background:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('https://images.unsplash.com/photo-1518546305927-5a555bb7020d?q=80&w=1800');
+  background-size: cover;
+  background-position: center;
+}
+
+/* FOOTER */
+
+.footer-section {
+  padding: 30px 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* MODAL */
+
+.custom-modal {
+  background: #111;
+  color: white;
+  border-radius: 20px;
+}
+
+.modal-specs li {
+  margin-bottom: 10px;
+}
+
+/* THEME BUTTON */
+
+.theme-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  background: var(--gold);
+  color: #000;
+  font-size: 1.2rem;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 991px) {
+
+  .navbar-collapse {
+    background: #000;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 15px;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  .hero-title {
+    font-size: 2.7rem;
+  }
+
+  .section-title h2,
+  .specs-content h2,
+  .boutique-section h2 {
+    font-size: 2.2rem;
+  }
+
+}
